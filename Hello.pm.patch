@@ -1,0 +1,22 @@
+--- gen-perl/Hello.pm.orig	2008-07-29 10:42:41.000000000 +0900
++++ gen-perl/Hello.pm	2008-07-29 10:43:36.000000000 +0900
+@@ -261,7 +261,7 @@
+ 
+ sub process_hello{
+     my $self = shift;
+-    my ($seqid, $input, $output); 
++    my ($seqid, $input, $output) = @_;
+     my $args = new Hello_hello_args();
+     $args->read($input);
+     $input->readMessageEnd();
+@@ -271,4 +271,10 @@
+       $result->write($output);
+       $output->getTransport()->flush();
+   }
++
++sub method_exists {
++    my ($self, $methodname) = @_;
++    $self->can($methodname) ? 1 : 0;
++}
++
+ 1;

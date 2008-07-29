@@ -1,0 +1,7 @@
+Thrift の Perl サーバー実装。Thfit の perl バインディングは名前空間が
+Thrift:: だったり TProtocolFactory だったり統一性がないのが気になる。と
+りあえず自分の実装は Thrift:: を使っている。
+
+Thrift が生成する gen-perl の Processor のコードが Release 20080411p1
+では一部まだ未完の模様。Hello.pm.patch にあるように変更を加える必要があ
+る。
